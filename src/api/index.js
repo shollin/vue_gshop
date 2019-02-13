@@ -3,10 +3,9 @@
  */
 import http from './http';
 
-const baseUrl = 'http://localhost:3000';
+//const BASE_URL = 'http://localhost:4000';
 
-
-const BASE_URL = '/api'
+const BASE_URL = '/api'; //支持跨域
 
 // 1、根据经纬度获取位置详情
 export const reqAddress = (geohash) => http.get(`${BASE_URL}/position/${geohash}`)
@@ -30,14 +29,14 @@ export const reqLogout = () => http.get(BASE_URL + '/logout')
 /**
  * 获取商家信息
  */
-export const reqShopInfo = () => http.get('/info')
+export const reqShopInfo = () => http.get(BASE_URL + '/info')
 
 /**
  * 获取商家评价数组
  */
-export const reqShopRatings = () => http.get('/ratings')
+export const reqShopRatings = () => http.get(BASE_URL + '/ratings')
 
 /**
  * 获取商家商品数组
  */
-export const reqShopGoods = () => http.get('/goods')
+export const reqShopGoods = () => http.get(BASE_URL + '/goods')

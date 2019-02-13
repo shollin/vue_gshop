@@ -9,12 +9,17 @@
 import store from '@/vuex/store.js';
 import  Home  from "@/components/Home";
 import  FooterGuider  from "@/components/FooterGuide/FooterGuide";
+
+import {reqShops, reqAddress,reqFoodCategorys} from './api/index.js';
 export default {
   name: 'App',
   components:{
     Home,
     FooterGuider
-  }
+  },
+  async mounted() {
+    await reqFoodCategorys();
+  },
 }
 </script>
 
