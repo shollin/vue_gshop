@@ -1,0 +1,27 @@
+<template>
+  <div id="app">    
+    <router-view />
+    <FooterGuider v-show="$route.meta.showFooter"/>
+  </div>
+</template>
+
+<script>
+import store from '@/vuex/store.js';
+import  Home  from "@/components/Home";
+import  FooterGuider  from "@/components/FooterGuide/FooterGuide";
+export default {
+  name: 'App',
+  components:{
+    Home,
+    FooterGuider
+  }
+}
+</script>
+
+<style lang="stylus" rel="stylesheet/stylus">
+#app
+  width 100%
+  height 100%
+  background #f5f5f5
+  position relative
+</style>
